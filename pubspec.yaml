@@ -1,6 +1,5 @@
 name: ninepatch_image
 description: Resizable bitmaps (ninepatch images) for Flutter
-author: Mohammed Alimoor <ameral.java@gmail.com>
 version: 0.0.2
 homepage: https://github.com/onestudio/flutter_ninepatch_image
 
