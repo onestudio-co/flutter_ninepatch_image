@@ -1,26 +1,32 @@
+
 # Resizable bitmaps (ninepatch images) for Flutter
-#9-Patch #ninepatch 
-what is A 9 patch image ?   is a regular png (.PNG) image which is needful for developers where they require to wrap any content within a background image without pixelating the background image. Usually background images have a fixed height and width, but sometimes we may require background images which does not pixelate though stretched, this now becomes a challenge with regular PNG images.
- example for this images 
- 
- ![enter image description here](https://i.ibb.co/yX4LWVx/bubble-blue-9.png)
+#9-Patch #ninepatch
+what is A 9 patch image ?   is a regular png (.PNG) image which is needful for developers where they require to wrap any content within a background image without pixelating the background image. Usually background images have a fixed height and width, but sometimes we may require background images which does not pixelate though stretched, this now becomes a challenge with regular PNG images.  
+example for this images
+
+![enter image description here](https://i.ibb.co/yX4LWVx/bubble-blue-9.png)  
 ![enter image description here](https://i.ibb.co/ZVq0BkT/orange-9.png)
 
-**Result** : 
+**Result** :   
 ![enter image description here](https://i.ibb.co/wWdJtbF/Screenshot-20221012-092152.png)
-# how to use 
+# how to use
 
-    NinePatchImage(  
-        hideLines: true,  
-      imageProvider: AssetImage("assets/orange.9.png"),  
-      child: Text(  
-            "Lorem Ipsum is simply dummy text of the printing ")),
+1- This will add a line like this to your package's pubspec.yaml
+```yaml
+dependencies:
+  ninepatch_image: ^0.0.2
+```
+```dart
+NinePatchImage( imageProvider: AssetImage("assets/orange.9.png"),
+ child: Text( "Lorem Ipsum is simply dummy text of the printing "))
+```
+
 
 ## TODO Progress
 
- - [x] **Stretchable area**
- - [x] **Padding box**
- - [ ]  **muilti point Stretchable** 
+- [x] **Stretchable area**
+- [x] **Padding box**
+- [ ]  **muilti point Stretchable**
 
 ## Contributing
 Thank you for considering contributing to WidGen! Feel free to contribute in any way you want.
