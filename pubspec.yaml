@@ -1,6 +1,6 @@
 name: ninepatch_image
 description: Resizable bitmaps (ninepatch images) for Flutter
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/onestudio-co/flutter_ninepatch_image
 
 environment:
