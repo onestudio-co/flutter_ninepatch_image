@@ -6,10 +6,13 @@ import 'package:image_pixels/image_pixels.dart';
 class NinePatchImage extends StatelessWidget {
   ///hide lines  in 9 patch image
   final bool hideLines;
+
   ///image provider  for  example  use AssetImage("assets/orange.9.png")
   final ImageProvider imageProvider;
+
   /// child widget for example  Text("Hi welcome  ")
   final Widget child;
+
   const NinePatchImage({
     Key? key,
     required this.imageProvider,
@@ -17,11 +20,20 @@ class NinePatchImage extends StatelessWidget {
     this.hideLines = true,
   }) : super(key: key);
 
+  EdgeInsets? _padding(int rightTop, int leftTop, ImgDetails img, int rightBottom, int leftBottom) {
+    final padding = EdgeInsets.fromLTRB(rightTop.toDouble(), leftTop.toDouble(),
+        (img.width ?? 0) - rightBottom.toDouble(), (img.height ?? 0) - leftBottom.toDouble());
+
+    return padding.isNonNegative ? padding : null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return ImagePixels(
         imageProvider: imageProvider,
         builder: (context, img) {
+          if (!img.hasImage) return const SizedBox.shrink();
+
           var leftTop = -1;
           var leftBottom = -1;
 
@@ -64,21 +76,14 @@ class NinePatchImage extends StatelessWidget {
               child: Container(
                 // width: 300,
                 // height: 100,
-                padding: EdgeInsets.fromLTRB(
-                    rightTop.toDouble(),
-                    leftTop.toDouble(),
-                    (img.width ?? 0) - rightBottom.toDouble(),
-                    (img.height ?? 0) - leftBottom.toDouble()),
+                padding: _padding(rightTop, leftTop, img, rightBottom, leftBottom),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: imageProvider,
-                      // fit: BoxFit.fill,
-                      centerSlice: Rect.fromLTRB(
-                          rightTop.toDouble(),
-                          leftTop.toDouble(),
-                          rightBottom.toDouble(),
-                          leftBottom.toDouble()),
-                    )),
+                  image: imageProvider,
+                  // fit: BoxFit.fill,
+                  centerSlice: Rect.fromLTRB(
+                      rightTop.toDouble(), leftTop.toDouble(), rightBottom.toDouble(), leftBottom.toDouble()),
+                )),
                 child: child,
               ));
         });
@@ -89,6 +94,7 @@ class BlackLineClipper extends CustomClipper<Path> {
   final bool hideLines;
 
   BlackLineClipper({required this.hideLines});
+
   @override
   Path getClip(Size size) {
     final path = Path();
