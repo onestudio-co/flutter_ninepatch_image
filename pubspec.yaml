@@ -1,16 +1,16 @@
 name: ninepatch_image
 description: Resizable bitmaps (ninepatch images) for Flutter
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/onestudio-co/flutter_ninepatch_image
 
 environment:
-  sdk: ">=2.16.1 <3.0.0"
+  sdk: '>=3.2.0 <4.0.0'
 #  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  image_pixels: ^2.0.2
+  image_pixels: ^3.0.2
 
 dev_dependencies:
   flutter_test:

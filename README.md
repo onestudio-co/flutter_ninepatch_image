@@ -4,17 +4,17 @@
 what is A 9 patch image ?   is a regular png (.PNG) image which is needful for developers where they require to wrap any content within a background image without pixelating the background image. Usually background images have a fixed height and width, but sometimes we may require background images which does not pixelate though stretched, this now becomes a challenge with regular PNG images.  
 example for this images
 
-![enter image description here](https://i.ibb.co/yX4LWVx/bubble-blue-9.png)  
-![enter image description here](https://i.ibb.co/ZVq0BkT/orange-9.png)
+![image 1 for example](https://i.ibb.co/yX4LWVx/bubble-blue-9.png)  
+![image 2 for example]](https://i.ibb.co/ZVq0BkT/orange-9.png)
 
 **Result** :   
-![enter image description here](https://i.ibb.co/wWdJtbF/Screenshot-20221012-092152.png)
+![Screenshot](https://i.ibb.co/wWdJtbF/Screenshot-20221012-092152.png)
 # how to use
 
 1- This will add a line like this to your package's pubspec.yaml
 ```yaml
 dependencies:
-  ninepatch_image: ^0.0.2
+  ninepatch_image: ^0.0.4
 ```
 ```dart
 NinePatchImage( imageProvider: AssetImage("assets/orange.9.png"),
